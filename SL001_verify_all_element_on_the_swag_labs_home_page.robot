@@ -1,5 +1,5 @@
 *** Settings ***
-Resource         C:\\Users\\LENOVO\\Desktop\\Python\\keyword\\import.resource
+Resource         ${CURDIR}/../../keyword/import.resource
 Test Setup       home_page_feature.Open Swag Labs
 Test Teardown    SeleniumLibrary.Close Browser
 

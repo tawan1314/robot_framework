@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    C:\\Users\\LENOVO\\Desktop\\Python\\keyword\\import.resource
+Resource    ${CURDIR}/../../../keyword/import.resource
 
 *** Keywords ***
 Verify burger menu button options

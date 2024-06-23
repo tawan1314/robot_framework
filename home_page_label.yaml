@@ -1,0 +1,21 @@
+home_page_element:
+    header: Swag Labs
+    username: Username
+    password: Password
+    login_button: Login
+    accept_username:
+        header: "Accepted usernames are:"
+        user1: standard_user
+        user2: locked_out_user
+        user3: problem_user
+        user4: performance_glitch_user
+        user5: error_user
+        user6: visual_user
+    accept_password:
+        header: "Password for all users:"
+        pass: secret_sauce
+
+login_error:
+    empty_username: "Epic sadface: Username is required"
+    empty_password: "Epic sadface: Password is required"
+    invalid_account: "Epic sadface: Username and password do not match any user in this service"

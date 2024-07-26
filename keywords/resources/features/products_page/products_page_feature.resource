@@ -8,22 +8,45 @@ Verify elements on the products page
     
 Verify sort products option
     Click Element                 ${sort}
+    Capture Element Screenshot    ${sort}
     Element Text Should Be        ${sort_a_z}                  ${products_page_element.sort.sort_a_z}
     Click Element                 ${sort_a_z}
+    Capture Page Screenshot
     Element Text Should Be        ${sort_z_a}                  ${products_page_element.sort.sort_z_a}
     Click Element                 ${sort_z_a}
+    Capture Page Screenshot
     Element Text Should Be        ${sort_price_low_high}       ${products_page_element.sort.sort_low_high}
     Click Element                 ${sort_price_low_high}
+    Capture Page Screenshot
     Element Text Should Be        ${sort_price_high_low}       ${products_page_element.sort.sort_high_low}
     Click Element                 ${sort_price_high_low}
+    Capture Page Screenshot
 
 Verify all products on the products page
     Verify Sauce Labs Backpack details
+    Click Element    ${backpack_image}
+    Capture Page Screenshot
+    Go Back
     Verify Sauce Labs Bike Light details
+    Click Element    ${bike_light_image}
+    Capture Page Screenshot
+    Go Back
     Verify Sauce Labs Bolt T-Shirt details
+    Click Element    ${bolt_t_shirt_image}
+    Capture Page Screenshot
+    Go Back
     Verify Sauce Labs Fleece Jacket details
+    Click Element    ${jacket_image}
+    Capture Page Screenshot
+    Go Back
     Verify Sauce Labs Onesie details
+    Click Element    ${onesie_image}
+    Capture Page Screenshot
+    Go Back
     Verify Test.allTheThings() T-Shirt (Red) details
+    Click Element    ${t_shirt_red_image}
+    Capture Page Screenshot
+    Go Back
 
 Verify add to cart button
     ${list_add_to_cart}    Create List    
@@ -39,14 +62,14 @@ Verify add to cart button
         Click Button    ${list}
         Element Text Should Be    ${cart}    1
         Element Text Should Be    ${list}    ${products_page_element.remove_cart_lbl}
+        Capture Element Screenshot           ${list}
         Click Button    ${list}
         Element Text Should Be    ${cart}    ${EMPTY}
         Element Text Should Be    ${list}    ${products_page_element.add_to_cart_lbl}
+        Capture Element Screenshot           ${list}
     END
 
-Log out
-    Click Button    ${burger_menu_button}
-    BuiltIn.Sleep    1s
-    Click Button    ${close_burger_menu_button}
-    burger_menu_btn_detail.Verify Logout element and logout
-    Verify all element on the homepage
+# Add a products to the cart
+#     [Arguments]    ${product}
+#     Element Text Should Be    ${product}    ${products_page_element.add_to_cart_lbl}
+#     Click Button              ${product}

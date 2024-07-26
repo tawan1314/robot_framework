@@ -1,0 +1,7 @@
+your_information_element:
+  header_lbl: 'Checkout: Your Information'
+  firstname_lbl: 'First Name'
+  lastname_lbl: 'Last Name'
+  zipcode_lbl:  'Zip/Postal Code'
+  continue_btn: 'Continue'
+  cancel_btn: 'Cancel'

@@ -7,6 +7,7 @@ Library        Process
 Library        yaml
 Library        RequestsLibrary
 Library        SeleniumLibrary
+Library        RPA.PDF
 
 # PAGE LABEL
 Variables      ${CURDIR}/../../../swag_labs_project/keywords/resources/labels/home_page/home_page_label.yaml
@@ -27,3 +28,9 @@ Resource       ${CURDIR}/../../../swag_labs_project/keywords/resources/features/
 Resource       ${CURDIR}/../../../swag_labs_project/keywords/resources/features/products_page/products_page_feature.resource
 Resource       ${CURDIR}/../../../swag_labs_project/keywords/resources/features/products_page/products_detail.resource
 Resource       ${CURDIR}/../../../swag_labs_project/keywords/resources/features/products_page/burgur_menu/burger_menu_btn_detail.resource
+
+# PRODUCTS IMAGES PNG
+
+
+# PRODUCTS IMAGES JSON
+# Resource        ${CURDIR}/../../test_data/products_images/products_image.json

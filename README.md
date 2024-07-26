@@ -1,3 +1,14 @@
-# robot_framework
+# Template: Robot Framework - Minimal
 
-Hi, I am Tawan. I am new of automate software tester. This is my robot framework practicing, I hope this is the oppotunity for me and you who read my code. Thank you for your attention.
+This is the simplest template to start from.
+
+- Get started from a simple task template in `tasks.robot`.
+  - Uses [Robot Framework](https://robocorp.com/docs/languages-and-frameworks/robot-framework/basics) syntax.
+- You can configure your robot `robot.yaml`.
+- You can configure dependencies in `conda.yaml`.
+
+## Learning materials
+
+- [Robocorp Developer Training Courses](https://robocorp.com/docs/courses)
+- [Documentation links on Robot Framework](https://robocorp.com/docs/languages-and-frameworks/robot-framework)
+- [Example bots in Robocorp Portal](https://robocorp.com/portal)

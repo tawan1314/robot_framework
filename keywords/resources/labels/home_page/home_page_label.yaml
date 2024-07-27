@@ -1,17 +1,14 @@
 home_page_element:
-    header: Swag Labs
-    username: Username
-    password: Password
-    login_button: Login
-    accept_username_header: "Accepted usernames are:"
-    accept_username: "Accepted usernames are:\nstandard_user\nlocked_out_user\nproblem_user\nperformance_glitch_user\nerror_user\nvisual_user"
-    accept_password_header: "Password for all users:"
-    accept_password: "Password for all users:\nsecret_sauce"
+    home_page_header_lbl: Swag Labs
+    home_page_username_lbl: Username
+    home_page_password_lbl: Password
+    home_page_login_button: Login
+    home_page_accept_username_lbl: "Accepted usernames are:\nstandard_user\nlocked_out_user\nproblem_user\nperformance_glitch_user\nerror_user\nvisual_user\nPassword for all users:\nsecret_sauce"
 
-login_error:
-    empty_username: "Epic sadface: Username is required"
-    empty_password: "Epic sadface: Password is required"
-    invalid_account: "Epic sadface: Username and password do not match any user in this service"
+login_error_lbl:
+    empty_username_lbl: "Epic sadface: Username is required"
+    empty_password_lbl: "Epic sadface: Password is required"
+    invalid_account_lbl: "Epic sadface: Username and password do not match any user in this service"
 
 login_lock_out_user: "Epic sadface: Sorry, this user has been locked out."
 

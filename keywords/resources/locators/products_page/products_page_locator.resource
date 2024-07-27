@@ -1,5 +1,5 @@
 *** Variables ***
-${products_header}             xpath:/html/body/div/div/div/div[1]/div[1]/div[2]/div
+${products_page.header_lbl}    xpath=//span[contains(., "***string***")]
 ${burger_menu_button}          xpath:/html/body/div/div/div/div[1]/div[1]/div[1]/div/div[1]/div/button
 ${close_burger_menu_button}    xpath:/html/body/div/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/button
 ${all_items}                   xpath:/html/body/div/div/div/div[1]/div[1]/div[1]/div/div[2]/div[1]/nav/a[1]

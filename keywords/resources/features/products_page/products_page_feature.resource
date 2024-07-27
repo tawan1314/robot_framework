@@ -3,10 +3,6 @@ Resource    ${CURDIR}/../../../library/import.resource
 
 
 *** Keywords ***
-Verify elements on the products page
-    Element Text Should Be        ${products_header}     ${products_page_element.header_lbl}
-    Element Text Should Be        ${product_title}       ${products_page_element.title_lbl}
-    
 Verify sort products option
     Click Element                 ${sort}
     Capture Element Screenshot    ${sort}

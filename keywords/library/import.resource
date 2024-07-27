@@ -9,6 +9,9 @@ Library        RequestsLibrary
 Library        SeleniumLibrary
 Library        RPA.PDF
 
+# CONFIGS
+Variables      ${CURDIR}/../../../robot_framework/keywords/resources/configs.yaml
+
 # PAGE LABEL
 Variables      ${CURDIR}/../../../robot_framework/keywords/resources/labels/home_page/home_page_label.yaml
 Variables      ${CURDIR}/../../../robot_framework/keywords/resources/labels/products_page/products_page_label.yaml

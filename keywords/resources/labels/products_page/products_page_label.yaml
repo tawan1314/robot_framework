@@ -1,41 +1,40 @@
 products_page_element:
-  header_lbl:      Swag Labs
-  title_lbl:       Products
-  three_line_tap:
-    all_items_lbl: All Items
-    about_lbl:     About
-    logout_lbl:    Logout
-    reset_app_state_lbl:  Reset App State 
-  sort: 
-    sort_a_z:      Name (A to Z)
-    sort_z_a:      Name (Z to A)
-    sort_low_high: Price (low to high)
-    sort_high_low: Price (high to low)
-  add_to_cart_lbl: Add to cart
-  remove_cart_lbl: Remove
+  products_page_header_lbl:       Products
+  products_page_burger_menu:
+    products_page_all_items_lbl: All Items
+    products_page_about_lbl:     About
+    products_page_logout_lbl:    Logout
+    products_page_reset_app_state_lbl:  Reset App State 
+  products_page_sort: 
+    products_page_sort_a_z:      Name (A to Z)
+    products_page_sort_z_a:      Name (Z to A)
+    products_page_sort_low_high: Price (low to high)
+    products_page_sort_high_low: Price (high to low)
+  products_page_add_to_cart_lbl: Add to cart
+  products_page_remove_cart_lbl: Remove
     
-products:
-  backpack:
+products_page_products:
+  products_page_backpack:
     name:        Sauce Labs Backpack
     description: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
     price:       $29.99
-  bike_light:
+  products_page_bike_light:
     name:        Sauce Labs Bike Light
     description: A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
     price:       $9.99
-  bolt_t_shirt:
+  products_page_bolt_t_shirt:
     name:        Sauce Labs Bolt T-Shirt
     description: Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
     price:       $15.99
-  jacket:
+  products_page_jacket:
     name:        Sauce Labs Fleece Jacket
     description: It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
     price:       $49.99
-  onesie:
+  products_page_onesie:
     name:        Sauce Labs Onesie
     description: Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
     price:       $7.99
-  t_shirt_red:
+  products_page_t_shirt_red:
     name:        Test.allTheThings() T-Shirt (Red)
     description: This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
     price:       $15.99

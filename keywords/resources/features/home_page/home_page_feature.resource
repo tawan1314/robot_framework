@@ -2,60 +2,36 @@
 Resource    ${CURDIR}/../../../library/import.resource
 
 *** Keywords ***
-Verify all element on the homepage
-    Element Text Should Be        ${home_page_header}            ${home_page_element.header}
-    # Element Text Should Be        ${username_input}       ${home_page_element.username}
-    Click Element                 ${username_input}
-    # Element Text Should Be        ${password_input}       ${home_page_element.password}
-    Click Element                 ${password_input}
-    # Element Text Should Be        ${login_button}         ${home_page_element.login_button}
-    Click Element                 ${login_button}
-    Verify error when login with empty username
-    Element Text Should Be        ${accept_username_header}      ${home_page_element.accept_username_header}
-    Element Text Should Be        ${all_username}                ${home_page_element.accept_username}
-    Element Text Should Be        ${accept_password_header}      ${home_page_element.accept_password_header}
-    Element Text Should Be        ${all_pass}                    ${home_page_element.accept_password}
-    Capture Page Screenshot
+Verify header on homepage
+    Verify header on the page
+    ...    ${home_page.header_lbl}
+    ...    ${home_page_element.home_page_header_lbl}
 
-Verify elements on the homepage
-    Element Text Should Be        ${home_page_header}            ${home_page_element.header}
-    Element Text Should Be        ${accept_username_header}      ${home_page_element.accept_username_header}
-    Element Text Should Be        ${all_username}                ${home_page_element.accept_username}
-    Element Text Should Be        ${accept_password_header}      ${home_page_element.accept_password_header}
-    Element Text Should Be        ${all_pass}                    ${home_page_element.accept_password}
-    Capture Page Screenshot
+Verify elements on homepage
+    Get Text    ${home_page.accepted_users_lbl}
+    Verify element on the page
+    ...    ${home_page.accepted_users_lbl}
+    ...    ${home_page_element.home_page_accept_username_lbl}
 
 Login user
-    [Arguments]        ${username}          ${password}
-    Click Element      ${username_input}
-    Input Text         ${username_input}    ${username}
-    Click Element      ${password_input}
-    Input Password     ${password_input}    ${password}
-    Capture Page Screenshot
-    Click Button       ${login_button}
-    Capture Page Screenshot
+    [Arguments]        ${username}                ${password}
+    Input username and password    ${username}    ${password}
+    common_feature.Click button when ready     ${home_page.button}           ${home_page_element.home_page_login_button}
 
-Verify popup when login with lock out user
-    Element Should Contain    ${popup_login_error}        ${login_lock_out_user}
-    Click Button              ${close_popup_login_error}
-    Capture Page Screenshot
+Input username and password
+    [Arguments]        ${username}                ${password}
+    common_feature.Click element when ready       ${home_page.input_user}       ${home_page_element.home_page_username_lbl}
+    common_feature.Input text   
+    ...    ${home_page.input_user}    
+    ...    ${home_page_element.home_page_username_lbl}    
+    ...    ${username}
+    common_feature.Click element when ready       ${home_page.input_user}       ${home_page_element.home_page_password_lbl}
+    common_feature.Input text   
+    ...    ${home_page.input_user}    
+    ...    ${home_page_element.home_page_password_lbl}
+    ...    ${password}
+    common_feature.Capture Page
 
-Verify error when login with empty username
-    Element Should Contain    ${popup_login_error}        ${login_error.empty_username}
-    Click Button              ${close_popup_login_error}
-    Capture Page Screenshot
-
-Verify error when login with empty password
-    Element Should Contain    ${popup_login_error}        ${login_error.empty_password}
-    Click Button              ${close_popup_login_error}
-    Capture Page Screenshot
-
-Verify error when login with invalid account
-    Element Should Contain    ${popup_login_error}        ${login_error.invalid_account}
-    Click Button              ${close_popup_login_error}
-    Capture Page Screenshot
-
-Clear username and password field
-    [Arguments]    ${username_input_error}    ${password_input_error}
-    Press Keys   ${username_input_error}   CTRL+a   BACKSPACE
-    Press Keys   ${password_input_error}   CTRL+a   BACKSPACE
+Clear username and password
+    common_feature.Clear text on field    ${home_page.input_user}    ${home_page_element.home_page_username_lbl}
+    common_feature.Clear text on field    ${home_page.input_user}    ${home_page_element.home_page_password_lbl}

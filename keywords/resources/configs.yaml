@@ -1,0 +1,8 @@
+GLOBAL_TIMEOUT: 5s
+SHORT_TIMEOUT:  1s
+LONG_TIMEOUT:   10s
+
+URL: https://www.saucedemo.com/
+BROWSER: Chrome
+
+PICTURE_LOCATION: ${CURDIR}/../../robot_framework/results/result_pictures/Swag_Labs_{index}.png

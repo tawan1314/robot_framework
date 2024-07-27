@@ -1,0 +1,4 @@
+your_cart_element:
+  header_lbl: 'Your Cart'
+  continue_shopping_btn:  'Continue Shopping'
+  checkout_btn: 'Checkout'

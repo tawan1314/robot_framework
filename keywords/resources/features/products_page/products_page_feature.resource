@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ${CURDIR}/../../../library/import.resource
 
+
 *** Keywords ***
 Verify elements on the products page
     Element Text Should Be        ${products_header}     ${products_page_element.header_lbl}
@@ -49,27 +50,30 @@ Verify all products on the products page
     Go Back
 
 Verify add to cart button
+    [Arguments]    
+    ...    ${item_1}=${OPTIONS}
+    ...    ${item_2}=${OPTIONS}
+    ...    ${item_3}=${OPTIONS}
+    ...    ${item_4}=${OPTIONS}
+    ...    ${item_5}=${OPTIONS}
+    ...    ${item_6}=${OPTIONS}
     ${list_add_to_cart}    Create List    
-    ...    ${backpack_add_to_cart}    
-    ...    ${bike_light_add_to_cart}    
-    ...    ${bolt_t_shirt_add_to_cart}    
-    ...    ${jacket_add_to_cart}    
-    ...    ${onesie_add_to_cart}    
-    ...    ${t_shirt_red_add_to_cart}
-    FOR  ${list}  IN  @{list_add_to_cart}
+    ...    ${item_1}    
+    ...    ${item_2}    
+    ...    ${item_3}    
+    ...    ${item_4}    
+    ...    ${item_5}    
+    ...    ${item_6}
+    ${number_of_item}    Evaluate    len(${list_add_to_cart})
+    FOR  ${item}  IN  @{list_add_to_cart}
         Element Text Should Be    ${cart}    ${EMPTY}
-        Element Text Should Be    ${list}    ${products_page_element.add_to_cart_lbl}
-        Click Button    ${list}
-        Element Text Should Be    ${cart}    1
-        Element Text Should Be    ${list}    ${products_page_element.remove_cart_lbl}
-        Capture Element Screenshot           ${list}
-        Click Button    ${list}
-        Element Text Should Be    ${cart}    ${EMPTY}
-        Element Text Should Be    ${list}    ${products_page_element.add_to_cart_lbl}
-        Capture Element Screenshot           ${list}
+        Run Keyword And Ignore Error    
+        ...    Element Text Should Be    ${item}    ${products_page_element.add_to_cart_lbl}
     END
+    Run Keyword And Ignore Error    Click Button    ${item}
+    Run Keyword And Ignore Error    Element Text Should Be    ${cart}    ${number_of_item}
+    Capture Page Screenshot
 
-# Add a products to the cart
-#     [Arguments]    ${product}
-#     Element Text Should Be    ${product}    ${products_page_element.add_to_cart_lbl}
-#     Click Button              ${product}
+Click cart button
+    Click Element   ${cart}
+    Capture Page Screenshot

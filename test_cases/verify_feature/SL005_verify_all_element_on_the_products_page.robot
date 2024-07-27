@@ -3,6 +3,7 @@ Resource         ${CURDIR}/../../keywords/library/import.resource
 Test Setup       common_feature.Open Swag Labs
 Test Teardown    common_feature.Close Swag Labs
 
+
 *** Test Cases ***
 SL005 Verify all elements on the Products page
     [Tags]    Swag_Labs    website    verify_feature    STD_USER    SL005

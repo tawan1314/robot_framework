@@ -41,7 +41,7 @@ ${onesie_price}            xpath:/html/body/div/div/div/div[2]/div/div/div/div[5
 ${t_shirt_red_price}       xpath:/html/body/div/div/div/div[2]/div/div/div/div[6]/div[2]/div[2]/div
 
 # add products to cart
-${cart}                          xpath:/html/body/div/div/div/div[1]/div[1]/div[3]/a
+${cart}                          xpath=//*[@id="shopping_cart_container"]/a
 ${backpack_add_to_cart}          xpath:/html/body/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/button
 ${bike_light_add_to_cart}        xpath:/html/body/div/div/div/div[2]/div/div/div/div[2]/div[2]/div[2]/button
 ${bolt_t_shirt_add_to_cart}      xpath:/html/body/div/div/div/div[2]/div/div/div/div[3]/div[2]/div[2]/button

@@ -46,10 +46,10 @@ Remove an item from cart
     common_feature.Change item name format to click element    ${item_name}    ${item_locator}
 
 Click burger button
-    Run Keyword And Ignore Error    common_feature.Click button without text when ready      ${products_page.burger_menu_button}
+    Run Keyword And Ignore Error    common_feature.Click close button      ${products_page.burger_menu_button}
 
 Close burger button
-    common_feature.Close button when ready      ${products_page.close_burger_menu_button}
+    common_feature.Click close button      ${products_page.close_burger_menu_button}
 
 Click All Items
     Click burger button

@@ -41,4 +41,4 @@ Login and verify locked out username and password
     [Arguments]    ${test_data.username}    ${test_data.password}
     home_page_feature.Login user                    ${test_data.username}          ${test_data.password}
     common_feature.Verify error message popup       ${home_page.popup_msg}         ${login_lock_out_user}
-    common_feature.Close button when ready          ${home_page.close_popup_btn}
+    common_feature.Click close button               ${home_page.close_popup_btn}

@@ -14,4 +14,4 @@ Verify all elements on the Swag Labs home page
     [Arguments]    ${username}    ${password}
     home_page_feature.Login user                            ${username}               ${password}
     common_feature.Verify error message popup               ${home_page.popup_msg}    ${login_error_lbl.empty_username_lbl}
-    common_feature.Close button when ready                  ${home_page.close_popup_btn}
+    common_feature.Click close button                       ${home_page.close_popup_btn}

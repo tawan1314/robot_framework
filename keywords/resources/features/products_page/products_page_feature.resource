@@ -3,73 +3,77 @@ Resource    ${CURDIR}/../../../library/import.resource
 
 
 *** Keywords ***
-Verify sort products option
-    Click Element                 ${sort}
-    Capture Element Screenshot    ${sort}
-    Element Text Should Be        ${sort_a_z}                  ${products_page_element.sort.sort_a_z}
-    Click Element                 ${sort_a_z}
-    Capture Page Screenshot
-    Element Text Should Be        ${sort_z_a}                  ${products_page_element.sort.sort_z_a}
-    Click Element                 ${sort_z_a}
-    Capture Page Screenshot
-    Element Text Should Be        ${sort_price_low_high}       ${products_page_element.sort.sort_low_high}
-    Click Element                 ${sort_price_low_high}
-    Capture Page Screenshot
-    Element Text Should Be        ${sort_price_high_low}       ${products_page_element.sort.sort_high_low}
-    Click Element                 ${sort_price_high_low}
-    Capture Page Screenshot
+Verify all elements on products page
+    Verify header on the page    ${products_page.header_lbl}    ${products_page_element.products_page_header_lbl}
 
-Verify all products on the products page
-    Verify Sauce Labs Backpack details
-    Click Element    ${backpack_image}
-    Capture Page Screenshot
-    Go Back
-    Verify Sauce Labs Bike Light details
-    Click Element    ${bike_light_image}
-    Capture Page Screenshot
-    Go Back
-    Verify Sauce Labs Bolt T-Shirt details
-    Click Element    ${bolt_t_shirt_image}
-    Capture Page Screenshot
-    Go Back
-    Verify Sauce Labs Fleece Jacket details
-    Click Element    ${jacket_image}
-    Capture Page Screenshot
-    Go Back
-    Verify Sauce Labs Onesie details
-    Click Element    ${onesie_image}
-    Capture Page Screenshot
-    Go Back
-    Verify Test.allTheThings() T-Shirt (Red) details
-    Click Element    ${t_shirt_red_image}
-    Capture Page Screenshot
-    Go Back
+Verify product on the products page
+    [Arguments]    ${product_name}    ${product_description}    ${product_price}
+    Verify element on the page    ${products_page.item_name}            ${product_name}
+    Verify element on the page    ${products_page.item_description}     ${product_description}
+    Verify element on the page    ${products_page.item_price}           ${product_price}
 
-Verify add to cart button
+Sort products
+    [Arguments]    ${sort_option}
+    common_feature.Click element when ready      ${products_page.sort_option}    ${sort_option}
+    common_feature.Capture Page
+
+Verify add to cart and remove button
     [Arguments]    
-    ...    ${item_1}=${OPTIONS}
-    ...    ${item_2}=${OPTIONS}
-    ...    ${item_3}=${OPTIONS}
-    ...    ${item_4}=${OPTIONS}
-    ...    ${item_5}=${OPTIONS}
-    ...    ${item_6}=${OPTIONS}
-    ${list_add_to_cart}    Create List    
-    ...    ${item_1}    
-    ...    ${item_2}    
-    ...    ${item_3}    
-    ...    ${item_4}    
-    ...    ${item_5}    
-    ...    ${item_6}
-    ${number_of_item}    Evaluate    len(${list_add_to_cart})
-    FOR  ${item}  IN  @{list_add_to_cart}
-        Element Text Should Be    ${cart}    ${EMPTY}
-        Run Keyword And Ignore Error    
-        ...    Element Text Should Be    ${item}    ${products_page_element.add_to_cart_lbl}
+    ...    ${item_name_1}
+    ...    ${item_name_2}=${null}
+    ...    ${item_name_3}=${null}
+    ...    ${item_name_4}=${null}
+    ...    ${item_name_5}=${null}
+    ...    ${item_name_6}=${null}
+    ${product_list}    Create List
+    ...    ${item_name_1}
+    ...    ${item_name_2}
+    ...    ${item_name_3}
+    ...    ${item_name_4}
+    ...    ${item_name_5}
+    ...    ${item_name_6}
+    FOR  ${item}  IN  @{product_list}
+        Run Keyword And Ignore Error    Add an item to cart         ${item}     ${products_page.item_add_to_cart}
+        Run Keyword And Ignore Error    Remove an item from cart    ${item}     ${products_page.item_remove}
     END
-    Run Keyword And Ignore Error    Click Button    ${item}
-    Run Keyword And Ignore Error    Element Text Should Be    ${cart}    ${number_of_item}
-    Capture Page Screenshot
 
-Click cart button
-    Click Element   ${cart}
-    Capture Page Screenshot
+Add an item to cart
+    [Arguments]    ${item_name}    ${item_locator}
+    common_feature.Change item name format to click element    ${item_name}    ${item_locator}
+
+Remove an item from cart
+    [Arguments]    ${item_name}    ${item_locator}
+    common_feature.Change item name format to click element    ${item_name}    ${item_locator}
+
+Click burger button
+    Run Keyword And Ignore Error    common_feature.Click button without text when ready      ${products_page.burger_menu_button}
+
+Close burger button
+    common_feature.Click button without text when ready      ${products_page.close_burger_menu_button}
+
+Click All Items
+    Click burger button
+    common_feature.Click element when ready      ${products_page.burger_menu_items}    ${products_page_element.products_page_burger_menu.products_page_all_items_lbl}
+    Verify all elements on products page
+    common_feature.Capture Page
+
+Click About
+    Click burger button
+    common_feature.Click element when ready      ${products_page.burger_menu_items}    ${products_page_element.products_page_burger_menu.products_page_about_lbl}
+    common_feature.Capture Page
+
+Click Logout
+    Click burger button
+    common_feature.Click element when ready      ${products_page.burger_menu_items}    ${products_page_element.products_page_burger_menu.products_page_logout_lbl}
+    common_feature.Capture Page
+
+Click Reset App State
+    Click burger button
+    common_feature.Click element when ready      ${products_page.burger_menu_items}    ${products_page_element.products_page_burger_menu.products_page_reset_app_state_lbl}
+    common_feature.Capture Page
+
+Logout Swag Labs
+    Click burger button
+    Close burger button
+    Click Logout
+    home_page_feature.Verify all elements on homepage

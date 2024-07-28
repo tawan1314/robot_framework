@@ -1,9 +1,18 @@
 home_page_element:
-    home_page_header_lbl: Swag Labs
+    home_page_header_lbl:   Swag Labs
     home_page_username_lbl: Username
     home_page_password_lbl: Password
     home_page_login_button: Login
-    home_page_accept_username_lbl: "Accepted usernames are:\nstandard_user\nlocked_out_user\nproblem_user\nperformance_glitch_user\nerror_user\nvisual_user\nPassword for all users:\nsecret_sauce"
+    home_page_accept_lbl:
+        home_page_accept_username_header:               "Accepted usernames are:"
+        home_page_accept_username_standard:             standard_user
+        home_page_accept_username_locked_out:           locked_out_user
+        home_page_accept_username_problem:              problem_user
+        home_page_accept_username_performance_glitch:   performance_glitch_user
+        home_page_accept_username_error:                error_user
+        home_page_accept_username_visual:               visual_user
+        home_page_accept_password_header:               "Password for all users:"
+        home_page_accept_password_for_all:              secret_sauce
 
 login_error_lbl:
     empty_username_lbl: "Epic sadface: Username is required"

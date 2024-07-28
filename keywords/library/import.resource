@@ -31,8 +31,6 @@ Resource       ${CURDIR}/../../../robot_framework/keywords/resources/locators/yo
 # PAGE FEATURE
 Resource       ${CURDIR}/../../../robot_framework/keywords/resources/features/home_page/home_page_feature.resource
 Resource       ${CURDIR}/../../../robot_framework/keywords/resources/features/products_page/products_page_feature.resource
-Resource       ${CURDIR}/../../../robot_framework/keywords/resources/features/products_page/products_detail.resource
-Resource       ${CURDIR}/../../../robot_framework/keywords/resources/features/products_page/burgur_menu/burger_menu_btn_detail.resource
 Resource       ${CURDIR}/../../../robot_framework/keywords/resources/features/your_cart_page/your_cart_page_feature.resource
 
 # PRODUCTS IMAGES PNG

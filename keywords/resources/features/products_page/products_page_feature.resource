@@ -49,7 +49,7 @@ Click burger button
     Run Keyword And Ignore Error    common_feature.Click button without text when ready      ${products_page.burger_menu_button}
 
 Close burger button
-    common_feature.Click button without text when ready      ${products_page.close_burger_menu_button}
+    common_feature.Close button when ready      ${products_page.close_burger_menu_button}
 
 Click All Items
     Click burger button

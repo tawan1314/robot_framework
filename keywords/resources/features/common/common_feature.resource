@@ -51,7 +51,7 @@ Click button when ready
     Wait Until Element Is Visible    ${locator}    timeout=${GLOBAL_TIMEOUT}
     Click button    ${locator}
 
-Click button without text when ready
+Close button when ready
     [Arguments]    ${btn_locator}
     Wait Until Element Is Visible    ${btn_locator}    timeout=${GLOBAL_TIMEOUT}
     Click button    ${btn_locator}

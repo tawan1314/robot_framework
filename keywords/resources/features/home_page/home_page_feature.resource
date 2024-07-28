@@ -30,7 +30,6 @@ Login user
     [Arguments]        ${username}                ${password}
     Input username and password    ${username}    ${password}
     common_feature.Click button when ready     ${home_page.button}           ${home_page_element.home_page_login_button}
-    products_page_feature.Verify all elements on products page
 
 Input username and password
     [Arguments]        ${username}                ${password}

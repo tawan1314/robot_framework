@@ -53,5 +53,5 @@ Login with an invalid username or password and verify popup error
     [Arguments]    ${test_data.username}    ${test_data.password}    ${error_msg}
     home_page_feature.Login user                        ${test_data.username}        ${test_data.password}
     common_feature.Verify error message popup           ${home_page.popup_msg}       ${error_msg}
-    # common_feature.Click close button when ready        ${home_page.close_popup_btn}
+    # common_feature.Close button when ready            ${home_page.close_popup_btn}
     # home_page_feature.Clear username and password

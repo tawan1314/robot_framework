@@ -8,6 +8,9 @@ Library        yaml
 Library        RequestsLibrary
 Library        SeleniumLibrary
 Library        RPA.PDF
+Library        pypdf
+Library        pdfminer
+Library        ImageLibrary    # robotcode: ignore
 
 # CONFIGS
 Variables      ${CURDIR}/../../../robot_framework/keywords/resources/configs.yaml

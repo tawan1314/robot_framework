@@ -10,6 +10,7 @@ Open Swag Labs
 
 Close Swag Labs
     Capture Page
+    merge PDF
     Close Browser
 
 Verify header on the page
@@ -72,4 +73,15 @@ Clear text on field
 
 Capture Page
     SeleniumLibrary.Set Screenshot Directory    path=${PICTURE_LOCATION}
-    SeleniumLibrary.Capture Page Screenshot    swag_labs_{index}.png
+    SeleniumLibrary.Capture Page Screenshot     filename=swag_labs_{index}.png
+
+merge PDF
+    @{files}	      List Files In Directory    ${PICTURE_LOCATION}    *.png	absolute
+    ${pdf_locator}    Set Variable    ../robot_framework/testcase.pdf
+    RPA.PDF.Add Files To Pdf    ${files}    testcase.pdf
+    FOR  ${i}  IN  @{files}
+        Remove Files    ${i}
+    END
+    Remove Files         ${pdf_locator}
+    Open Pdf             ${PICTURE_LOCATION}/testcase.pdf
+    Close All Pdfs            
